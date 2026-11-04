@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rocket Rover &mdash; race round a tiny planet</title>
+<meta name="description" content="Race a rival round a tiny planet. Lean, boost, and beat them to the far side. For iPhone, with Android to follow.">
+<meta property="og:title" content="Rocket Rover">
+<meta property="og:description" content="Race a rival round a tiny planet. Lean, boost, win.">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    color-scheme: dark;
+    --ink: #1E1633;
+    --bg: #241B4B;
+    --surface: #2E2460;
+    --line: #463A82;
+    --text: #FFF4E0;
+    --muted: #C9BEDF;
+    --red: #FF4D4D;
+    --boost: #FFC93C;
+    --mint: #3DDC97;
+    --sky: #4CC9F0;
+    --grape: #9B5DE5;
+    --skyTop: #6C5CE7;
+    --skyBottom: #FF9F68;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; background: var(--ink); }
+  body {
+    margin: 0;
+    padding: 0 20px 72px;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 42rem; margin: 0 auto; }
+  header { padding: 56px 0 8px; border-bottom: 3px solid var(--line); }
+  h1 { font-size: 2.1rem; line-height: 1.15; margin: 0 0 8px; font-weight: 800; }
+  h2 { font-size: 1.2rem; margin: 40px 0 10px; font-weight: 800; color: var(--boost); }
+  h3 { font-size: 1rem; margin: 26px 0 8px; color: var(--sky); }
+  p { margin: 0 0 16px; }
+  ul { margin: 0 0 16px; padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  a { color: var(--boost); font-weight: 600; }
+  a:hover { color: var(--text); }
+  strong { color: var(--text); }
+  code {
+    background: var(--ink);
+    border: 2px solid var(--line);
+    border-radius: 6px;
+    padding: 0 5px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.88em;
+  }
+  .meta { color: var(--muted); font-size: 0.9rem; margin: 12px 0 28px; }
+  .lede {
+    background: var(--surface);
+    border: 3px solid var(--ink);
+    border-radius: 18px;
+    box-shadow: 0 5px 0 var(--ink);
+    padding: 16px 20px;
+    margin: 0 0 8px;
+  }
+  .lede p:last-child { margin-bottom: 0; }
+  nav.crumbs { padding-top: 32px; font-size: 0.9rem; }
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 3px solid var(--line);
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+</style>
+
+<style>
+  .hero {
+    margin: 48px 0 0;
+    padding: 40px 24px 32px;
+    border: 3px solid var(--ink);
+    border-radius: 24px;
+    box-shadow: 0 6px 0 var(--ink);
+    background: linear-gradient(180deg, var(--skyTop), var(--skyBottom));
+    text-align: center;
+  }
+  .planet {
+    width: 120px; height: 120px; margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 4px solid var(--ink);
+    background: radial-gradient(circle at 35% 30%, var(--mint), #1f9e68);
+    box-shadow: 0 6px 0 var(--ink);
+  }
+  .hero h1 {
+    font-size: clamp(2.6rem, 11vw, 4.4rem);
+    line-height: 1;
+    margin: 0 0 12px;
+    color: var(--text);
+    text-shadow: 0 4px 0 var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .hero p { color: var(--ink); font-weight: 700; font-size: 1.15rem; margin: 0; }
+  .pills { list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .pills li {
+    margin: 0;
+    padding: 8px 14px;
+    border: 3px solid var(--ink);
+    border-radius: 999px;
+    color: var(--ink);
+    font-weight: 800;
+  }
+  .p1 { background: var(--boost); }
+  .p2 { background: var(--sky); }
+  .p3 { background: var(--mint); }
+  .p4 { background: var(--red); }
+  .p5 { background: var(--grape); }
+</style>
+</head>
+<body>
+<main>
+
+  <div class="hero">
+    <div class="planet" role="img" aria-label="A tiny green planet"></div>
+    <h1>ROCKET ROVER</h1>
+    <p>Lean. Boost. Beat them round.</p>
+  </div>
+
+  <h2>What it is</h2>
+
+  <p>Race a rival round a tiny planet. The throttle is automatic: you hold
+  left to lean back, hold right to lean forward and tap boost, while your
+  rival comes at you head-on from the far side. Win races, earn cash, bolt
+  new parts onto your rover, and take on tougher rivals and the Weekly
+  Grand Prix.</p>
+
+  <ul class="pills">
+    <li class="p1">Two thumbs</li>
+    <li class="p2">Tiny planets</li>
+    <li class="p3">Head-on rivals</li>
+    <li class="p4">Build your rover</li>
+    <li class="p5">Grand Prix</li>
+  </ul>
+
+  <h2>Fair play</h2>
+
+  <p>No coins or race advantages for sale. Ads are
+  optional rewarded ads you choose to watch, never during a race. No account
+  needed; your progress stays on your phone. See the
+  <a href="privacy.html">privacy policy</a>.</p>
+
+  <h2>Get it</h2>
+
+  <p>Coming to iPhone first, with Android to follow. Questions:
+  <a href="mailto:mert@maindtec.de">mert@maindtec.de</a>.</p>
+
+  <footer>
+    <p><a href="privacy.html">Privacy policy</a> &middot; <a href="terms.html">Terms of use</a> &middot; <a href="support.html">Support</a></p>
+    <p>Rocket Rover is made and published by Vibalyze O&Uuml;.</p>
+  </footer>
+
+</main>
+</body>
+</html>
